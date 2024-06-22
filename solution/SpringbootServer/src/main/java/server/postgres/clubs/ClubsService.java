@@ -1,25 +1,45 @@
 package server.postgres.clubs;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+
+
 @Service
 public class ClubsService {
     private final ClubsRepository clubsRepository;
-    @Autowired
+
     public ClubsService(ClubsRepository clubsRepository) {
         this.clubsRepository = clubsRepository;
     }
 
-    public List<Clubs> getClubs(){
-        return clubsRepository.getClubs();
+    public List<Clubs> getClubs(int filterSeason, String filterCountry) {
+        List<Clubs> clubsList = null;
+        if(filterSeason == 0 && filterCountry.equals("All") ){
+            clubsList = clubsRepository.getAllClubs();
+        }else if (filterSeason == 0 ){
+            clubsList = clubsRepository.findByCountry(filterCountry);
+        }else if(filterCountry.equals("All")){
+            clubsList = clubsRepository.findBySeason(filterSeason);
+        }else{
+            clubsList = clubsRepository.findBySeasonAndClubs(filterSeason, filterCountry);
+        }
+        return clubsList;
+    }
+
+    public List<String> getCountry() {
+        List<String> countryList =clubsRepository.getCountry();
+        countryList.add("All");
+        return countryList;
+    }
+
+    public List<Integer> getClubsSeason() {
+        List<Integer> seasonList = clubsRepository.getClubsSeason();
+        seasonList.add(0);
+        return seasonList;
     }
 
     public List<Clubs> getClubsFromCompetition(String compid) {return clubsRepository.getClubsFromCompetition(compid);}
 
-    public List<Clubs> getClubsByName(char letter){return clubsRepository.getClubsByName(letter);}
-
-    public Clubs getClubById(int id){return clubsRepository.getClubById(id);}
+    public Clubs getClubById(int clubId){return clubsRepository.getClubById(clubId);}
 
 }
