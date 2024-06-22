@@ -1,41 +1,71 @@
-const express = require('express');
+var createError = require('http-errors');
+var express = require('express');
 const cors = require('cors');
-const http = require('http');
-const { Server } = require('socket.io');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+
 const swaggerUi = require('swagger-ui-express');
-const openApiDocumentation = require('./swagger/swagger-documentation.json');
+const YAML = require('js-yaml');
+const fs = require('fs');
 
-// Import routes, services and controllers
-const routes = require('./routes');
-const app = express();
-const port = 3000;
+var indexRouter = require('./routes/index');
+var teamsRouter = require('./routes/clubsRoute');
+var singleTeamRouter = require('./routes/singleClubRoute');
+var playerRouter = require('./routes/playersRoute');
+var logInRouter = require('./routes/logIn');
+var gamesRouter = require('./routes/gamesRoute');
+var competitionRouter = require('./routes/competitionsRoute');
+var singleGameRouter = require('./routes/singleGameRoute');
+var userRouter = require('./routes/users');
 
-// Middleware setup
+var app = express();
+
+app.use(logger('dev'));
 app.use(express.json());
-app.use('/api-docs', swaggerUi.serve,
-    swaggerUi.setup(openApiDocumentation));
-// Apply CORS middleware with custom options
-app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:1338', 'http://localhost:8444', 'http://localhost:3004'], // Allow requests from these origins
-    methods: ['GET', 'POST'], // Allow only specified methods
-    optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
-}));
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
+app.use('/', indexRouter);
+app.use('/teams', teamsRouter);
+app.use('/single-team', singleTeamRouter);
+app.use('/player', playerRouter);
+app.use('/competitions', competitionRouter);
+app.use('/logIn', logInRouter);
+app.use('/games', gamesRouter);
+app.use('/single-game', singleGameRouter);
+app.use('/users', userRouter);
 
-// Register routes
-app.use('/', routes);
+// Load Swagger YAML files
+function loadYAMLFiles(...filePaths) {
+    return filePaths.reduce((acc, filePath) => {
+        const content = YAML.load(fs.readFileSync(filePath, 'utf8'));
+        return { ...acc, ...content };
+    }, {});
+}
 
-// Setup HTTP server and Socket.IO
-const server = http.createServer(app);
-const io = new Server(server, {
-    cors: {
-        origin: '*',
-        methods: ['GET', 'POST']
-    }
+const swaggerDocument = loadYAMLFiles(
+    path.join(__dirname, 'docs/PunditpubAPI.yaml'),
+);
+
+// Setup Swagger UI
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+    next(createError(404));
 });
 
-// Start the server
-server.listen(port, () => {
-    console.log('Server running on port ' + port);
+// Error handler to return JSON
+app.use(function(err, req, res, next) {
+    const errorResponse = {
+        message: err.message,
+        error: req.app.get('env') === 'development' ? err : {}
+    };
+
+    res.status(err.status || 500);
+    res.json(errorResponse);
 });
 
-module.exports = { app };
+module.exports = app;

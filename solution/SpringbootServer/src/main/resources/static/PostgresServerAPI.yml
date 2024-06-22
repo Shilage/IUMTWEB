@@ -5,8 +5,8 @@ schemes:
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: Postgres Server API
-  description: API for Competitions, Players and Users
+  title: Springboot Postgres Server API
+  description: API for Competitions, Players and Users obtained via Springboot
 
 
 paths:

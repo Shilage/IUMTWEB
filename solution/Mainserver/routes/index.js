@@ -1,50 +1,24 @@
 const express = require('express');
-
-const clubsRoutes = require('./clubsRoute');
-const routerClubs = express.Router();
-routerClubs.use('/clubs', clubsRoutes);
-
-const playersRoutes = require('./playersRoute');
-const routerPlayers = express.Router();
-routerPlayers.use('/players', playersRoutes);
-
-const gamesRoutes= require('./gamesRoute')
-const routerGames = express.Router();
-routerPlayers.use('/games', gamesRoutes);
-
-const competitionsRoutes = require('./competitionsRoute');
-const routerCompetitions = express.Router();
-routerCompetitions.use('/competitions', competitionsRoutes);
-
-const playersValuationsRoutes = require('./players_evaluationsRoute');
-const routerPlayersValuations = express.Router();
-routerPlayersValuations.use('/player_evaluations', playersValuationsRoutes);
+const router = express.Router();
+const axios = require('axios')
+const path = require("path");
 
 
-const appearencesRoutes = require('./appearencesRoute');
-const routerAppearences = express.Router();
-routerPlayersValuations.use('/appearences', appearencesRoutes);
+const apiKey = "62563bbc4e9e5b4871a03be615443210";
+const apiUrl = "https://gnews.io/api/v4/search?country=it&category=sport&q=football&apikey=" + apiKey;
 
-const clubGamesRoutes= require('./clubGamesRoute')
-const routerClubGames= express.Router();
-routerClubGames.use('/clubGames', clubGamesRoutes)
 
-const gameEventsRoutes= require('./gameEventsRoute')
-const routerGameEvents= express.Router();
-routerGameEvents.use('/gameEvents', gameEventsRoutes)
 
-const gameLineupsRoutes= require('./gameLineupsRoute')
-const routerGameLineups= express.Router();
-routerGameLineups.use('/gameLineups', gameLineupsRoutes)
 
-module.exports = [
-    routerClubs,
-    routerPlayers,
-    routerGames,
-    routerPlayersValuations,
-    routerCompetitions,
-    routerAppearences,
-    routerClubGames,
-    routerGameEvents,
-    routerGameLineups,
-];
+router.get("/get-news", function(req, res) {
+    axios.get(apiUrl)
+        .then(response => {
+            res.json(response.data)
+        })
+        .catch(error => {
+            res.setHeader('Content-Type', 'application/json');
+            res.status(500).json({ error: 'Internal Server Error' });
+        });
+})
+
+module.exports = router;

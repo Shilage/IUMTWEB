@@ -7,7 +7,7 @@ const axios = require("axios");
 /**
  * GET a filtered list of all competitions.
  *
- * @route GET /all-competitions
+ * @route GET /getCompetitions
  * @param {string} filter - Query param to filter competitions.
  * @returns {JSON} An array of competition objects filtered based on the provided filter.
  */
@@ -26,7 +26,7 @@ router.get('/getCompetitions', function (req, res) {
 /**
  * GET competition details by competition ID.
  *
- * @route GET /get-competitions-by-id
+ * @route GET /getCompetitionById
  * @param {number} competitionId - Query param for the competition ID.
  * @returns {JSON} Competition object for the specified competition ID.
  */
@@ -45,7 +45,7 @@ router.get('/getCompetitionById', function (req, res) {
 /**
  * GET a list of competitions categorized by country.
  *
- * @route GET /get-competitions-country
+ * @route GET /getCompetitionsByCountry
  * @returns {JSON} An array of competition objects categorized by country.
  */
 router.get('/getCompetitionsByCountry', function (req, res) {
