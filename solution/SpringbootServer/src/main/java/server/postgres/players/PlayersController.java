@@ -21,7 +21,7 @@ public class PlayersController {
      * @return A list of all Players.
      */
     @GetMapping("/players")
-    public List<Players> getPlayer(){
+    public List<Players> getPlayers(){
         return playersService.getPlayers();
     }
 
