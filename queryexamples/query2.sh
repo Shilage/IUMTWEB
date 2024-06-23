@@ -1,0 +1,1 @@
+curl -X GET "http://localhost:8444/get-teams-by-competition?filterCompetition=IT1"
