@@ -8,13 +8,13 @@ const axios = require("axios");
 /**
  * GET a list of teams participating in a specific competition.
  *
- * @route GET /getClubsByCompetitions
+ * @route GET /get-teams-by-competition
  * @param {string} filterCompetition - Query param to filter teams by competition.
  * @returns {JSON} An array of team objects participating in the specified competition.
  */
-router.get('/getClubsByCompetitions', function (req, res) {
+router.get('/get-teams-by-competition', function (req, res) {
     const { filterCompetition } = req.query;
-    axios.get(`http://localhost:8444/getClubsByCompetitions?filterCompetition=${filterCompetition}`)
+    axios.get(`http://localhost:8444/get-teams-by-competition?filterCompetition=${filterCompetition}`)
         .then(response => {
             res.json(response.data);
         })
@@ -27,16 +27,16 @@ router.get('/getClubsByCompetitions', function (req, res) {
 /**
  * GET a list of teams based on season and country.
  *
- * @route GET /clubsBySeasonAndCountry
+ * @route GET /get-teams-by-season-and-country
  * @param {string} filterCountry - Query param to filter teams by country.
  * @param {string} filterSeason - Query param to filter teams by season.
  * @returns {JSON} An array of team objects filtered by country and season.
  */
-router.get('/clubsBySeasonAndCountry', function (req, res) {
+router.get('/get-teams-by-season-and-country', function (req, res) {
 
     const { filterCountry, filterSeason } = req.query;
 
-    axios.get(`http://localhost:8444/clubsBySeasonAndCountry?filterCountry=${filterCountry}&filterSeason=${filterSeason}`)
+    axios.get(`http://localhost:8444/get-teams-by-season-and-country?filterCountry=${filterCountry}&filterSeason=${filterSeason}`)
         .then(response => {
             res.json(response.data);
         })
@@ -48,11 +48,11 @@ router.get('/clubsBySeasonAndCountry', function (req, res) {
 /**
  * GET a list of teams categorized by country.
  *
- * @route GET /getClubsCountry
+ * @route GET /get-teams-country
  * @returns {JSON} An array of team objects categorized by country.
  */
-router.get('/getClubsCountry', function(req, res) {
-    axios.get(`http://localhost:8444/getClubsCountry`)
+router.get('/get-teams-country', function(req, res) {
+    axios.get(`http://localhost:8444/get-teams-country`)
         .then(response => {
             res.json(response.data)
         })
@@ -64,11 +64,11 @@ router.get('/getClubsCountry', function(req, res) {
 /**
  * GET a list of club seasons.
  *
- * @route GET /getClubSeason
+ * @route GET /get-club-season
  * @returns {JSON} An array of club season objects.
  */
-router.get('/getClubSeason', function(req, res) {
-    axios.get(`http://localhost:8444/getClubSeason`)
+router.get('/get-club-season', function(req, res) {
+    axios.get(`http://localhost:8444/get-club-season`)
         .then(response => {
             res.json(response.data)
         })

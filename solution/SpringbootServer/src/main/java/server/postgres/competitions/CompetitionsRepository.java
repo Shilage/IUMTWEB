@@ -5,23 +5,19 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-
-public interface CompetitionsRepository extends JpaRepository<Competitions,Long> {
-
-    @Query(value = "SELECT DISTINCT c1.* " +
-            "FROM competitions c1 " + "WHERE (c1.country_name = :filter)",
-            nativeQuery = true)
-    List<Competitions> findByCountry(String filter);
-
-    @Query(value = "SELECT DISTINCT c1.* " +
-            "FROM competitions c1 ",
-            nativeQuery = true)
-    List<Competitions> getCompetitions();
-
-    @Query(value = "SELECT DISTINCT * " +
-            "FROM competitions "+ "WHERE competition_id = :competitionId",
-            nativeQuery = true)
-    Competitions getCompetitionById(String competitionId);
+public interface CompetitionsRepository   extends JpaRepository<Competitions, String> {
+        @Query(value = "SELECT DISTINCT c1.* " +
+                "FROM competitions c1 " + "WHERE (c1.country_name = :filter)",
+                nativeQuery = true)
+        List<Competitions> findByCountry(String filter);
+        @Query(value = "SELECT DISTINCT c1.* " +
+                "FROM competitions c1 ",
+                nativeQuery = true)
+        List<Competitions> getAllCompetition();
+        @Query(value = "SELECT DISTINCT * " +
+                "FROM competitions "+ "WHERE competition_id = :competitionId",
+                nativeQuery = true)
+        Competitions getCompetitionById(String competitionId);
 
     @Query(value = "SELECT DISTINCT c1.country_name " +
             "FROM competitions c1 ",
@@ -32,5 +28,4 @@ public interface CompetitionsRepository extends JpaRepository<Competitions,Long>
             "FROM competitions c1 ",
             nativeQuery = true)
     List<String> getCompetitionsId();
-
 }

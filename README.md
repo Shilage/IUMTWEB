@@ -54,10 +54,10 @@ Prima di iniziare, assicurati di avere installato [Node.js](https://nodejs.org/)
    Una volta avviato il client, apri il browser e collegati all'indirizzo [http://localhost:3002](http://localhost:3002) per accedere all'applicazione.
 
 6. **Bonus-Utilizzo di configurazione compound per velocizzare le procedure di avvio dei server
-    a)_NodeJS Client collocato su IUMTWEB/solution/client puntante a bin/www_
-    b)_NodeJS Main server collocato su IUMTWEB/solution/Mainserver puntante a Mainserver/app.js_
-    c)_NodeJS Mongo server collocato su IUMTWEB/solution/Mongoserver puntante a Mongoserver/app.js_
-    d)_Spring boot server puntante al file SpringbootServerApplication nell'app java.server.postgres_
+    a)_NodeJS Client collocato su IUMTWEB/solution/client puntante ad app.js sotto src/ aggiungendo nella "before launch" la sotto config "run npm script" con command "start";_
+    b)_NodeJS Main server collocato su IUMTWEB/solution/Mainserver puntante a Mainserver/app.js ;_
+    c)_NodeJS Mongo server collocato su IUMTWEB/solution/Mongoserver puntante a Mongoserver/app.js ;_
+    d)_Spring boot server puntante al file SpringbootServerApplication nell'app java.server.postgres ;_
 
 Divertitevi su The Pundit Pub!
 

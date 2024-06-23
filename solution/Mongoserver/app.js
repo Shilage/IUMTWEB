@@ -9,8 +9,8 @@ const YAML = require('js-yaml');
 const fs = require('fs');
 const swaggerUi = require('swagger-ui-express');
 const usersRouter = require('./routes/users');
-const gamesRouter = require('./routes/gamesRoute');
-const appearancesRouter = require('./routes/appearancesRoute');
+const gamesRouter = require('./routes/games');
+const appearancesRouter = require('./routes/appearances');
 
 const app = express();
 app.use(cors());

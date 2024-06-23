@@ -12,10 +12,10 @@ const {log} = require("debug");
  * @param {number} clubId - The ID of the club (team).
  * @returns {JSON} Team object details for the specified team ID.
  */
-router.get('/getClubById/:clubId', function(req, res) {
+router.get('/get-team-by-id/:clubId', function(req, res) {
     const teamCode = req.params.clubId;
 
-    axios.get(`http://localhost:8444/getClubById/${teamCode}`)
+    axios.get(`http://localhost:8444/get-team-by-id/${teamCode}`)
         .then(response => {
             res.json(response.data)
         })

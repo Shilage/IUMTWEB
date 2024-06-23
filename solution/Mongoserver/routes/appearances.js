@@ -3,7 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 const path = require('path');
 router.use( bodyParser.json() );
-const appearances_controller = require('../controllers/appearancesController.js')
+const appearances_controller = require('../controllers/appearances_controller.js')
 
 /**
  * Route to get player appearances by player ID.

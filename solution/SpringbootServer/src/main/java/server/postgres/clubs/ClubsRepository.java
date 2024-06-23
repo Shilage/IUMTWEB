@@ -5,26 +5,23 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface ClubsRepository extends JpaRepository<Clubs, Long> {
-    
+public interface ClubsRepository  extends JpaRepository<Clubs, String> {
+
     @Query(value = "SELECT DISTINCT c1.* " +
             "FROM clubs c1 join competitions c2  on c1.domestic_competition_id=c2.competition_id " +
             "WHERE c1.last_season = :filterSeason AND c2.country_name = :filterCountry",
             nativeQuery = true)
     List<Clubs> findBySeasonAndClubs(int filterSeason, String filterCountry);
-
     @Query(value = "SELECT DISTINCT c1.* " +
             "FROM clubs c1 join competitions c2  on c1.domestic_competition_id=c2.competition_id " +
             "WHERE c2.country_name = :filterCountry",
             nativeQuery = true)
     List<Clubs> findByCountry(String filterCountry);
-
     @Query(value = "SELECT DISTINCT c1.* " +
             "FROM clubs c1 " +
             "WHERE c1.last_season = :filterSeason",
             nativeQuery = true)
     List<Clubs> findBySeason(int filterSeason);
-
     @Query(value = "SELECT DISTINCT c1.* " +
             "FROM clubs c1",
             nativeQuery = true)
@@ -40,9 +37,10 @@ public interface ClubsRepository extends JpaRepository<Clubs, Long> {
             nativeQuery = true)
     List<Integer> getClubsSeason();
 
-    @Query(value = "SELECT * FROM clubs WHERE domestic_competition_id = :compid ORDER BY name", nativeQuery = true)
-    List<Clubs> getClubsFromCompetition(String compid);
+    @Query(value = "SELECT * FROM clubs WHERE club_id = :clubId", nativeQuery = true)
+    Clubs getTeamById(int clubId);
 
-    @Query(value = "SELECT * FROM clubs WHERE club_id = :id", nativeQuery = true)
-    Clubs getClubById(int id);
+    @Query(value = "SELECT * FROM clubs WHERE domestic_competition_id = :competitionId", nativeQuery = true)
+    List<Clubs> getAllTeamsByCompetition(String competitionId);
+
 }
