@@ -3,13 +3,13 @@ info:
   version: '1.0.0'
   title: 'Punditpub API - Main Server'
   description: "Server for dispatching requests between other servers"
-host: 'localhost:3000'
+host: 'localhost:3001'
 basePath: '/'
 schemes:
   - 'http'
 
 paths:
-  /competitions/getCompetitions:
+  /competitions/all-competitions:
     get:
       summary: Get all competitions
       parameters:
@@ -27,7 +27,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /competitions/getCompetitionById:
+  /competitions/get-competitions-by-id:
     get:
       summary: Get competition by ID
       parameters:
@@ -45,7 +45,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /competitions/getCompetitionsByCountry:
+  /competitions/get-competitions-country:
     get:
       summary: Get competitions by country
       responses:
@@ -58,7 +58,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /games/getGames:
+  /games/get-games:
     get:
       summary: Get all games
       responses:
@@ -71,7 +71,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /games/clubGamesById/{clubId}:
+  /games/get-club-games-by-id/{clubId}:
     get:
       summary: Get games by club ID
       parameters:
@@ -91,7 +91,7 @@ paths:
             $ref: '#/definitions/Error'
 
 
-  /player/getPlayersByClub:
+  /player/get-player-by-team:
     get:
       summary: 'Get Player By Team'
       description: 'Retrieve players based on team filter.'
@@ -110,7 +110,7 @@ paths:
         '500':
           description: 'Internal Server Error'
 
-  /player/getPlayers:
+  /player/get-all-players:
     get:
       summary: 'Get All Players'
       description: 'Retrieve a list of all players.'
@@ -124,7 +124,7 @@ paths:
         '500':
           description: 'Internal Server Error'
 
-  /player/getPlayerById:
+  /player/get-player-by-playerId:
     get:
       summary: 'Get Player By Player ID'
       description: 'Retrieve player information based on player ID.'
@@ -141,7 +141,7 @@ paths:
         '500':
           description: 'Internal Server Error'
 
-  /player/getAppearancesByPlayerId/{player_id}:
+  /player/get-player-appearances-by-player-id/{player_id}:
     get:
       summary: Get player appearances by player ID
       parameters:
@@ -164,7 +164,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /player/getAppearancesByGameId/{game_id}:
+  /player/get-player-appearances-by-game-id/{game_id}:
     get:
       summary: Get player appearances by game ID
       parameters:
@@ -183,7 +183,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /single-game/getGameEventsById/{game_id}:
+  /single-game/get-game-events-by-id/{game_id}:
     get:
       summary: Get events of a game by ID
       parameters:
@@ -202,7 +202,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /single-game/getGameById/{game_id}:
+  /single-game/get-game-by-id/{game_id}:
     get:
       summary: Get details of a game by ID
       parameters:
@@ -221,7 +221,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /single-team/getClubById/{clubId}:
+  /single-team/get-team-by-id/{clubId}:
     get:
       summary: 'Get Team By ID'
       description: 'Retrieve information about a specific team using its club ID.'
@@ -245,7 +245,7 @@ paths:
               default: 'text/html'
 
 
-  /teams/getClubsByCompetitions:
+  /teams/get-teams-by-competition:
     get:
       summary: 'Get Teams By Competition'
       description: 'Retrieve teams based on competition filter.'
@@ -264,7 +264,7 @@ paths:
         '500':
           description: 'Internal Server Error'
 
-  /teams/clubsBySeasonAndCountry:
+  /teams/get-teams-by-season-and-country:
     get:
       summary: 'Get Teams By Season and Country'
       description: 'Retrieve teams based on country and season filters.'
@@ -287,7 +287,7 @@ paths:
         '500':
           description: 'Internal Server Error'
 
-  /teams/getClubsCountry:
+  /teams/get-teams-country:
     get:
       summary: 'Get All Team Countries'
       description: 'Retrieve a list of all team countries.'
@@ -301,7 +301,7 @@ paths:
         '500':
           description: 'Internal Server Error'
 
-  /teams/getClubSeason:
+  /teams/get-club-season:
     get:
       summary: 'Get All Club Seasons'
       description: 'Retrieve a list of all club seasons.'
