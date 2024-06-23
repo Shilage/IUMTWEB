@@ -10,13 +10,13 @@ const YAML = require('js-yaml');
 const fs = require('fs');
 
 var indexRouter = require('./routes/index');
-var teamsRouter = require('./routes/clubsRoute');
-var singleTeamRouter = require('./routes/singleClubRoute');
-var playerRouter = require('./routes/playersRoute');
+var teamsRouter = require('./routes/teams');
+var singleTeamRouter = require('./routes/single_team');
+var playerRouter = require('./routes/player');
 var logInRouter = require('./routes/logIn');
-var gamesRouter = require('./routes/gamesRoute');
-var competitionRouter = require('./routes/competitionsRoute');
-var singleGameRouter = require('./routes/singleGameRoute');
+var gamesRouter = require('./routes/games');
+var competitionRouter = require('./routes/competitions');
+var singleGameRouter = require('./routes/single_game');
 var userRouter = require('./routes/users');
 
 var app = express();

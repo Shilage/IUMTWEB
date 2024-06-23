@@ -11,10 +11,10 @@ const axios = require("axios");
  * @param {number} game_id - The ID of the game.
  * @returns {JSON} An array of event objects for the specified game ID.
  */
-router.get('/getGameEventsById/:game_id', function (req, res) {
+router.get('/get-game-events-by-id/:game_id', function (req, res) {
     const game_id = req.params.game_id;
 
-    axios.get(`http://localhost:3000/games/getGameEventsById/${game_id}`)
+    axios.get(`http://localhost:3000/games/get-game-events-by-id/${game_id}`)
         .then(response => {
             res.json(response.data)
         })
@@ -33,10 +33,10 @@ module.exports = router;
  * @returns {JSON} Game object details for the specified game ID.
  */
 
-router.get('/getGameById/:game_id', function (req, res) {
+router.get('/get-game-by-id/:game_id', function (req, res) {
     const game_id = req.params.game_id;
 
-    axios.get(`http://localhost:3000/games/getGameById/${game_id}`)
+    axios.get(`http://localhost:3000/games/get-game-by-id/${game_id}`)
         .then(response => {
             res.json(response.data)
         })

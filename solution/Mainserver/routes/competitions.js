@@ -7,14 +7,14 @@ const axios = require("axios");
 /**
  * GET a filtered list of all competitions.
  *
- * @route GET /getCompetitions
+ * @route GET /all-competitions
  * @param {string} filter - Query param to filter competitions.
  * @returns {JSON} An array of competition objects filtered based on the provided filter.
  */
-router.get('/getCompetitions', function (req, res) {
+router.get('/all-competitions', function (req, res) {
     const {filter} = req.query;
 
-    axios.get(`http://localhost:8444/getCompetitions?filter=${filter}`)
+    axios.get(`http://localhost:8444/all-competitions?filter=${filter}`)
         .then(response => {
             res.json(response.data)
         })
@@ -26,14 +26,14 @@ router.get('/getCompetitions', function (req, res) {
 /**
  * GET competition details by competition ID.
  *
- * @route GET /getCompetitionById
+ * @route GET /get-competitions-by-id
  * @param {number} competitionId - Query param for the competition ID.
  * @returns {JSON} Competition object for the specified competition ID.
  */
-router.get('/getCompetitionById', function (req, res) {
+router.get('/get-competitions-by-id', function (req, res) {
     const {competitionId} = req.query;
 
-    axios.get(`http://localhost:8444/getCompetitionById?competitionId=${competitionId}`)
+    axios.get(`http://localhost:8444/get-competitions-by-id?competitionId=${competitionId}`)
         .then(response => {
             res.json(response.data)
         })
@@ -45,11 +45,11 @@ router.get('/getCompetitionById', function (req, res) {
 /**
  * GET a list of competitions categorized by country.
  *
- * @route GET /getCompetitionsByCountry
+ * @route GET /get-competitions-country
  * @returns {JSON} An array of competition objects categorized by country.
  */
-router.get('/getCompetitionsByCountry', function (req, res) {
-    axios.get(`http://localhost:8444/getCompetitionsByCountry`)
+router.get('/get-competitions-country', function (req, res) {
+    axios.get(`http://localhost:8444/get-competitions-country`)
         .then(response => {
             res.json(response.data)
         })

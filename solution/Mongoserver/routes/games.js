@@ -3,7 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 const path = require('path');
 router.use( bodyParser.json() );
-const games_controller = require('../controllers/gamesController.js')
+const games_controller = require('../controllers/games_controller.js')
 
 
 /**

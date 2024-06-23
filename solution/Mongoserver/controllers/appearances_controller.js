@@ -8,7 +8,7 @@ const { AppearancesModel } = require('../models/appearances_model');
  */
 function getAllPlayerAppearances(player_id) {
     return new Promise((resolve, reject) => {
-        AppearancesModel.find({ "player_id" : player_id})
+         AppearancesModel.find({ "player_id" : player_id})
             .then((result) =>{
                 resolve(result);
             })

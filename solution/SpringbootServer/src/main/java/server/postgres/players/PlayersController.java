@@ -20,10 +20,11 @@ public class PlayersController {
      *
      * @return A list of all Players.
      */
-    @GetMapping("/players")
-    public List<Players> getPlayers(){
-        return playersService.getPlayers();
+    @GetMapping("/get-all-players")
+    public List<Players> getAllPlayers() {
+        return playersService.getAllPlayers();
     }
+
 
     /**
      * Get a player by their unique player ID.
@@ -31,9 +32,9 @@ public class PlayersController {
      * @param filter The unique player ID.
      * @return The Players object corresponding to the specified player ID.
      */
-    @GetMapping("/playerById")
-    public Players getPlayerById(@RequestParam(name = "filter") int filter) {
-        return playersService.getPlayerById(filter);
+    @GetMapping("/get-player-by-playerId")
+    public Players getPlayerByID(@RequestParam(name = "filter") int filter) {
+        return playersService.getPlayerByID(filter);
     }
 
 
@@ -43,9 +44,9 @@ public class PlayersController {
      * @param filter The team ID used to filter players.
      * @return A list of Players who are part of the specified team.
      */
-    @GetMapping("/playersByClubId")
+    @GetMapping("/get-player-by-team")
     public List<Players> getPlayersByTeam(@RequestParam(name = "filter") int filter) {
-        return playersService.getPlayersByClubId(filter);
+        return playersService.getPlayersByTeam(filter);
     }
 
 }

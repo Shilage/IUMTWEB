@@ -11,14 +11,14 @@ const apiUrl = "https://gnews.io/api/v4/search?country=it&category=sport&q=footb
 
 
 router.get("/get-news", function(req, res) {
-    axios.get(apiUrl)
-        .then(response => {
-            res.json(response.data)
-        })
-        .catch(error => {
-            res.setHeader('Content-Type', 'application/json');
-            res.status(500).json({ error: 'Internal Server Error' });
-        });
-})
+        axios.get(apiUrl)
+            .then(response => {
+                res.json(response.data)
+            })
+            .catch(error => {
+                res.setHeader('Content-Type', 'application/json');
+                res.status(500).json({ error: 'Internal Server Error' });
+            });
+    })
 
 module.exports = router;

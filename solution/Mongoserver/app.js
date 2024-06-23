@@ -9,14 +9,14 @@ const YAML = require('js-yaml');
 const fs = require('fs');
 const swaggerUi = require('swagger-ui-express');
 const usersRouter = require('./routes/users');
-const gamesRouter = require('./routes/gamesRoute');
-const appearancesRouter = require('./routes/appearancesRoute');
+const gamesRouter = require('./routes/games');
+const appearancesRouter = require('./routes/appearances');
 
 const app = express();
 app.use(cors());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/punditpub')
+mongoose.connect('mongodb://localhost:27017/punditpubdb')
     .then(() => {
         console.log('Connected to MongoDB');
     })
