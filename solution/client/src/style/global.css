@@ -1,0 +1,102 @@
+.container-background-color {
+  background: #04233f;
+  color: aliceblue;
+}
+
+.middle-container {
+  min-height: 100vh;
+}
+
+#chat-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-height: '80vh';
+}
+
+.data-card-container {
+  /*card in the middle box of single competition*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.titleHome {
+  font-size: 80px;
+  margin: 20px;
+  /* Cambia il colore del testo, puoi usare il codice colore desiderato */
+  font-family: 'Helvetica', sans-serif;
+  /* Cambia il tipo di carattere, sostituisci con il tuo preferito */
+}
+
+#card-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin: 20px;
+}
+.react-calendar {
+  width: 80%;
+  min-height: 70%;
+  /* Grandezza fissa del calendario */
+  border-radius: 10px;
+  /* Angoli arrotondati del calendario */
+  font-family: Arial, sans-serif;
+  /* Tipo di font personalizzato */
+}
+
+.react-calendar__tile {
+  border-radius: 5px;
+  border-color: #0c2840;
+  min-height: 70px;
+  background-color: #ffffffe8;
+  /* Angoli arrotondati dei singoli giorni */
+}
+
+#container-game-date {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+/* Stili aggiuntivi possono essere aggiunti qui */
+
+#event-card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  align-items: center;
+}
+
+.index-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.card-hover-effect {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  transform: scale(1.05); /* Scales up the card */
+  background-color: #05568d; /* Changes the background color */
+}
+
+.middle-container-background-color {
+  background: #04233f;
+  color: aliceblue;
+}
+
+#block-single-competition {
+  min-height: 70vh;
+}
