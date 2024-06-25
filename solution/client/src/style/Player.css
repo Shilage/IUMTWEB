@@ -1,0 +1,86 @@
+.overall-info-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start; /* Align items to the start of the container */
+  min-height: 100vh;
+  color: inherit;
+}
+
+.overall-info-container > div {
+  flex: 1;
+  display: flex;
+  background-color: #1a1a2e;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.player-container {
+  font-family: var(--font-family);
+}
+
+.header-info-container {
+  background: #04233f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.print-color {
+  color: rgb(232, 239, 243);
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 
+.middle-container {
+  height: 800px;
+} */
+
+.overall-info-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 500px;
+}
+
+.single-player-card:hover {
+  transform: translateY(-9px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.single-player-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  height: 500px;
+  border-radius: 20px;
+  padding: 20px;
+  border: 3px solid #ffffff;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.player-card a {
+  color: red;
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
+}
