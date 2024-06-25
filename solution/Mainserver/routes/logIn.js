@@ -13,7 +13,7 @@ const axios = require("axios");
  */
 router.get('/check-credentials', function (req, res) {
     const {email, password} = req.query;
-    axios.get(`http://localhost:8444/check-credentials?email=${email}&password=${password}`)
+    axios.get(`http://localhost:8081/check-credentials?email=${email}&password=${password}`)
         .then(response => {
             res.json(response.data);
         })

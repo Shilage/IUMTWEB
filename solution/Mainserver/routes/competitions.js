@@ -14,7 +14,7 @@ const axios = require("axios");
 router.get('/all-competitions', function (req, res) {
     const {filter} = req.query;
 
-    axios.get(`http://localhost:8444/all-competitions?filter=${filter}`)
+    axios.get(`http://localhost:8081/all-competitions?filter=${filter}`)
         .then(response => {
             res.json(response.data)
         })
@@ -33,7 +33,7 @@ router.get('/all-competitions', function (req, res) {
 router.get('/get-competitions-by-id', function (req, res) {
     const {competitionId} = req.query;
 
-    axios.get(`http://localhost:8444/get-competitions-by-id?competitionId=${competitionId}`)
+    axios.get(`http://localhost:8081/get-competitions-by-id?competitionId=${competitionId}`)
         .then(response => {
             res.json(response.data)
         })
@@ -49,7 +49,7 @@ router.get('/get-competitions-by-id', function (req, res) {
  * @returns {JSON} An array of competition objects categorized by country.
  */
 router.get('/get-competitions-country', function (req, res) {
-    axios.get(`http://localhost:8444/get-competitions-country`)
+    axios.get(`http://localhost:8081/get-competitions-country`)
         .then(response => {
             res.json(response.data)
         })

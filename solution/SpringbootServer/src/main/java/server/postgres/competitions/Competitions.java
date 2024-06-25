@@ -1,9 +1,12 @@
 package server.postgres.competitions;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "competitions")
 public class Competitions {
     @Id
     @Column(name = "competition_id", length = 50)
@@ -35,8 +38,10 @@ public class Competitions {
 
     @Column(name = "url", length = 255)
     private String url;
-    // Constructors, getters, and setters
-    public Competitions() {}
+
+    // Costruttore vuoto
+    public Competitions() {
+    }
 
     // Getter e Setter per ogni campo
 

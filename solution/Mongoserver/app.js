@@ -16,7 +16,7 @@ const app = express();
 app.use(cors());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/punditpubdb')
+mongoose.connect('mongodb://localhost:27017/FootGoal')
     .then(() => {
         console.log('Connected to MongoDB');
     })

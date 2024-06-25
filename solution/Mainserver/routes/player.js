@@ -12,7 +12,7 @@ const axios = require("axios");
  */
 router.get('/get-player-by-team', function(req, res) {
     const { filter } = req.query;
-    axios.get(`http://localhost:8444/get-player-by-team?filter=${filter}`)
+    axios.get(`http://localhost:8081/get-player-by-team?filter=${filter}`)
         .then(response => {
             res.json(response.data)
         })
@@ -30,7 +30,7 @@ router.get('/get-player-by-team', function(req, res) {
  * @returns {JSON} An array of all player objects.
  */
 router.get('/get-all-players', function(req, res) {
-    axios.get(`http://localhost:8444/get-all-players`)
+    axios.get(`http://localhost:8081/get-all-players`)
         .then(response => {
             res.json(response.data)
         })
@@ -48,7 +48,7 @@ router.get('/get-all-players', function(req, res) {
  */
 router.get('/get-player-by-playerId', function(req, res) {
     const { filter } = req.query;
-    axios.get(`http://localhost:8444/get-player-by-playerId?filter=${filter}`)
+    axios.get(`http://localhost:8081/get-player-by-playerId?filter=${filter}`)
         .then(response => {
             res.json(response.data)
         })

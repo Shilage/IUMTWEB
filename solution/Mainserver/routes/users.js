@@ -12,7 +12,7 @@ var router = express.Router();
 router.post('/sign-up', function(req, res) {
   const data = req.body; // Utilizza req.body per ottenere i dati dal corpo della richiesta
 
-  axios.post('http://localhost:8444/sign-up', data)
+  axios.post('http://localhost:8081/sign-up', data)
       .then(response => {
         res.json(response.data)
       })

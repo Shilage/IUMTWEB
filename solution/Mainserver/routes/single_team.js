@@ -15,7 +15,7 @@ const {log} = require("debug");
 router.get('/get-team-by-id/:clubId', function(req, res) {
     const teamCode = req.params.clubId;
 
-    axios.get(`http://localhost:8444/get-team-by-id/${teamCode}`)
+    axios.get(`http://localhost:8081/get-team-by-id/${teamCode}`)
         .then(response => {
             res.json(response.data)
         })

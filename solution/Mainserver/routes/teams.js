@@ -14,7 +14,7 @@ const axios = require("axios");
  */
 router.get('/get-teams-by-competition', function (req, res) {
     const { filterCompetition } = req.query;
-    axios.get(`http://localhost:8444/get-teams-by-competition?filterCompetition=${filterCompetition}`)
+    axios.get(`http://localhost:8081/get-teams-by-competition?filterCompetition=${filterCompetition}`)
         .then(response => {
             res.json(response.data);
         })
@@ -36,7 +36,7 @@ router.get('/get-teams-by-season-and-country', function (req, res) {
 
     const { filterCountry, filterSeason } = req.query;
 
-    axios.get(`http://localhost:8444/get-teams-by-season-and-country?filterCountry=${filterCountry}&filterSeason=${filterSeason}`)
+    axios.get(`http://localhost:8081/get-teams-by-season-and-country?filterCountry=${filterCountry}&filterSeason=${filterSeason}`)
         .then(response => {
             res.json(response.data);
         })
@@ -52,7 +52,7 @@ router.get('/get-teams-by-season-and-country', function (req, res) {
  * @returns {JSON} An array of team objects categorized by country.
  */
 router.get('/get-teams-country', function(req, res) {
-    axios.get(`http://localhost:8444/get-teams-country`)
+    axios.get(`http://localhost:8081/get-teams-country`)
         .then(response => {
             res.json(response.data)
         })
@@ -68,7 +68,7 @@ router.get('/get-teams-country', function(req, res) {
  * @returns {JSON} An array of club season objects.
  */
 router.get('/get-club-season', function(req, res) {
-    axios.get(`http://localhost:8444/get-club-season`)
+    axios.get(`http://localhost:8081/get-club-season`)
         .then(response => {
             res.json(response.data)
         })

@@ -1,16 +1,17 @@
-host: 'localhost:8444'
+
+host: 'localhost:8081'
 basePath: '/'
 schemes:
   - 'http'
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: Springboot Postgres Server API
-  description: API for Competitions, Players and Users obtained via Springboot
+  title: Postgres Server API
+  description: API for Competitions, Players and Users
 
 
 paths:
-  /playersByClubId:
+  /get-player-by-team:
     get:
       tags:
         - Server
@@ -33,7 +34,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /playerById:
+  /get-player-by-playerId:
     get:
       tags:
         - Server
@@ -54,7 +55,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /players:
+  /get-all-players:
     get:
       tags:
         - Server
@@ -71,7 +72,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /AllCompetitionsByCountry:
+  /get-competitions-country:
     get:
       tags:
         - Server
@@ -138,7 +139,7 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /AllCompetitions:
+  /all-competitions:
     get:
       tags:
         - Server
