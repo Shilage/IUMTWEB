@@ -1,6 +1,6 @@
 #container-footer{
     background-color: #04233f;
-    color: white;
+    color: darkgoldenrod;
 }
 #container-icon{
     height: 60px;
@@ -8,5 +8,5 @@
     flex-direction:row;
     align-items:center;
     justify-content:center;
-    color:white;
+    color:darkgoldenrod;
 }

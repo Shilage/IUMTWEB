@@ -15,7 +15,7 @@
 #bottomContainer {
   height: 15%;
   width: 100%;
-  background-color: #2a4d69;
+  background-color: #0c2840;
 }
 
 #topContainer {
@@ -80,8 +80,8 @@
   height: 60vh;
   margin-top: 90px;
   margin-bottom: 50px;
-  border-bottom: 1px solid #2a4d69;
-  border-top: 1px solid #2a4d69;
+  border-bottom: 1px solid darkgoldenrod;
+  border-top: 1px solid darkgoldenrod;
 }
 
 #box-imp-news {
@@ -115,5 +115,5 @@
   align-items: center;
   margin-bottom: 60px;
   width: 90%;
-  border-bottom: 1px solid #2a4d69;
+  border-bottom: 1px solid darkgoldenrod;
 }
