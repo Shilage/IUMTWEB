@@ -119,44 +119,44 @@ export default function Player() {
                 onChange={handleChangeTab}
               >
                 <Tab label="Information" value={0} />
-                <Tab label="Appearences" value={1} />
+                <Tab label="Appearances" value={1} />
               </Tabs>
             </Box>
           </div>
           {view === 0 ? (
             <div className="overall-info-container">
               <div className="single-player-card personal-info">
-                <h1 className="print-color"> Informazioni personali </h1>
-                <span>Paese di nascita: {player.countryOfBirth}</span>
-                <span>Data di nascita: {player.dateOfBirth}</span>
-                <span>Città di nascita: {player.cityOfBirth}</span>
-                <span>Cittadinanza: {player.countryOfCitizenship}</span>
-                <span>Altezza (cm): {player.heightInCm}</span>
+                <h1 className="print-color"> Personal info </h1>
+                <span>Country of birth: {player.countryOfBirth}</span>
+                <span>Date of birth: {player.dateOfBirth}</span>
+                <span>City of birth: {player.cityOfBirth}</span>
+                <span>Citizenship: {player.countryOfCitizenship}</span>
+                <span>Height: {player.heightInCm}{'cm'}</span>
               </div>
 
               <div className="single-player-card about-player">
-                <h1 className="print-color"> Specifiche </h1>
-                <span>Posizione: {player.position}</span>
-                <span>Posizione specifica: {player.subPosition}</span>
+                <h1 className="print-color"> Detailed info </h1>
+                <span>Position: {player.position}</span>
+                <span>Detailed position: {player.subPosition}</span>
                 <span>Club: {player.currentClubName}</span>
-                <span>Piede: {player.foot}</span>
+                <span>Preferred foot: {player.foot}</span>
               </div>
 
               <div className="single-player-card other-info">
-                <h1 className="print-color"> Mercato </h1>
-                <span>Valore di mercato (Eur): {player.marketValueInEur}</span>
+                <h1 className="print-color"> Market info </h1>
+                <span>Actual market value: {player.marketValueInEur} {'€'}</span>
                 <span>
-                  Valore di mercato piuù alto (Eur):{' '}
-                  {player.highestMarketValueInEur}
+                  Higher market value:{' '}
+                  {player.highestMarketValueInEur} {'€'}
                 </span>
-                <span>Fine Contratto: {player.contractExpirationDate}</span>
+                <span>Contract expiration date: {player.contractExpirationDate}</span>
                 <a
                   style={{ color: 'red' }}
                   href={player.url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Altre Info
+                  Transfermarkt link
                 </a>
               </div>
             </div>

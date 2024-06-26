@@ -25,7 +25,7 @@
 }
 
 .player-container {
-  font-family: var(--font-family);
+  font-family: var(--font-family), serif;
 }
 
 .header-info-container {
