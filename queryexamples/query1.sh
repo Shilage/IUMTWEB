@@ -1,1 +1,1 @@
-curl -X GET "http://localhost:8444/all-competitions?filter=Spain"
+curl -X GET "http://localhost:8081/all-competitions?filter=Spain"
