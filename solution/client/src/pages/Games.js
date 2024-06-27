@@ -26,7 +26,7 @@ export default function Games() {
   const navigate = useNavigate();
 
   function handleGameClick(game) {
-    //--> @TODO navigate function to single-game
+      navigate(`/single-game/${game.game_id}`);
   }
 
   function scrollToBottom() {
