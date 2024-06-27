@@ -94,7 +94,7 @@ paths:
   /player/get-player-by-team:
     get:
       summary: 'Get Player By Team'
-      description: 'Retrieve players based on team filter.'
+      description: 'Retrieve players based on team id.'
       parameters:
         - name: 'filter'
           in: 'query'
@@ -102,7 +102,7 @@ paths:
           type: 'string'
       responses:
         '200':
-          description: 'List of players for the specified team filter.'
+          description: 'List of players for the specified team id.'
           schema:
             type: array
             items:

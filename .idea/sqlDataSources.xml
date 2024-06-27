@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="bfda5bb2-f056-462e-91ac-2d55020608db" name="punditpubPostgre@localhost (DDL) Mapping">
+      <data-sources db="ab876165-6fbe-47ad-a630-436b4b7c2856" ddl="c38a85db-9a55-4ff2-ae9e-97b052064e60" />
+      <scope>
+        <node kind="database" qname="punditpub" />
+      </scope>
+    </mapping>
+  </component>
   <component name="SqlDataSourceStorage">
     <option name="dataSources">
       <list>
