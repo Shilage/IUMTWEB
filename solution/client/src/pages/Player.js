@@ -138,7 +138,16 @@ export default function Player() {
                 <h1 className="print-color"> Detailed info </h1>
                 <span>Position: {player.position}</span>
                 <span>Detailed position: {player.subPosition}</span>
-                <span>Club: {player.currentClubName}</span>
+                <span>Club:
+
+                  <a
+                    style={{color: 'white'}}
+                    href={`/single-team/${player.currentClubId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                 {player.currentClubName}
+              </a></span>
                 <span>Preferred foot: {player.foot}</span>
               </div>
 
