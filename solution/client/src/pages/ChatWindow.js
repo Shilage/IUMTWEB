@@ -14,6 +14,7 @@ import Drawer from '../components/DrawerVault';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import ArrowBack from '../components/atoms/ArrowBack';
+import Footer from '../components/Footer';
 
 /**
  * ChatWindow Component:
@@ -373,6 +374,7 @@ export default function ChatWindow() {
         chattingRooms={['PlayersChat', 'TeamsChat', 'GamesChat']}
       />
       <ArrowBack />
+      <Footer />
     </div>
   );
 }
