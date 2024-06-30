@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start; /* Align items to the start of the container */
-  min-height: 100vh;
+  min-height: 100%;
   color: inherit;
 }
 
@@ -21,7 +21,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .player-container {

@@ -9,7 +9,7 @@
 }
 
 .teams-container {
-  font-family: var(--font-family);
+  font-family: var(--font-family), serif;
 }
 /* YourComponent.css */
 .custom-select {
@@ -69,8 +69,7 @@
 }
 
 #middleContainer {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), #2a4d69);
-  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), #2a4d69) no-repeat;
   background-size: cover;
 }
 .filter-title {
