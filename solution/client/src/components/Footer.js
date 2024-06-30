@@ -29,15 +29,20 @@ export default function Footer() {
         <CallIcon />
         <LinkedInIcon />
       </Box>
-      <div className="text-center p-3" style={{ height: '150px' }}>
-        © {new Date().getFullYear()} Copyright:
-        <a className="text-white" href="/">
-          ThePunditPub.com
-        </a>
-        <p>Creato da Giuseppe Marino</p>
-        <p>Email: info@ThePunditPub.com</p>
-        <p>Indirizzo: Via dei Campioni, 710, Champions Town</p>
-      </div>
+        <div className="text-center p-3" style={{height: '150px'}}>
+            © {new Date().getFullYear()} Copyright:
+            <a className="text-white" href="/">
+                ThePunditPub.com
+            </a>
+            <p>Creato da Giuseppe Marino</p>
+            <p>Email: info@ThePunditPub.com</p>
+            <p>Indirizzo: Via dei Campioni, 710, Champions Town</p>
+            <p>
+                <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                    { <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="CSS Valido!"/>}
+                </a>
+            </p>
+        </div>
     </div>
   );
 }
