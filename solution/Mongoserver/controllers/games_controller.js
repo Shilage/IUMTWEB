@@ -7,7 +7,7 @@ const { GameEventModel } = require('../models/game_events_model');
  */
 function getAllGames() {
     return new Promise((resolve, reject) => {
-        GameModel.find({ season: { $gte: 2022 } })
+        GameModel.find({ season: { $gte: 2012 } })
             .then(result => {
                 resolve(result);
             })
