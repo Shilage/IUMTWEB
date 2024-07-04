@@ -12,6 +12,19 @@ import * as competitionService from '../services/competitionsService';
 import * as teamService from '../services/teamService';
 import LoadingComponent from '../components/Loading';
 
+/**
+ * SingleCompetitions Component:
+ *
+ * Displays the teams present in a Single Competition with their logos and names.
+ *
+ * Behavior:
+ * - On load, fetches the competitions Teams
+ * - Displays the teams names and logos
+ * - Users can click on a team to go to the selected team page
+ *
+ * @returns {JSX.Element} The JSX for the SingleCompetitions page.
+ */
+
 export default function SingleCompetitions() {
   const links = [true, true, true];
   const { competitionId } = useParams();

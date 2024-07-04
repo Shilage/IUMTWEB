@@ -3,11 +3,17 @@ import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import '../style/DataGrid.css';
 
-//controllare se viene import
 /**
+ * DataGrid component:
+ * A custom DataGrid component using Material-UI's DataGrid for displaying tabular data.
  *
- * @param {} param0
- * @returns
+ * @param {Object} param0 - The component props.
+ * @param {Object} param0.gridData - The data to be displayed in the grid.
+ * @param {Array} param0.gridData.columns - Array of column definitions.
+ * @param {Array} param0.gridData.rows - Array of row data.
+ * @param {Function} param0.onRowClick - Callback function to be called when a cell is clicked. Receives the clicked row's ID and a boolean value.
+ *
+ * @returns {JSX.Element} A React component that renders a data grid.
  */
 export default function DataGridElement({ gridData, onRowClick }) {
   const handleCellClick = (params, event) => {
